@@ -1,0 +1,73 @@
+-HTML: 
+ 
+ <html>
+  <head>
+    <title> Imersão Dev Alura - Aula 01</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="page-title">
+      Calculadora de média</h1>
+      <p class="page-subtitle">
+      Descubra qual a sua média de nota de todas as provas!
+      </p>
+      <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg" class="page-logo" alt="">
+    </div>
+    <a href="https://alura.com.br/" target="_blank">
+    <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+    </a>
+  </body>
+</html>
+
+-CSS:
+
+body {
+  font-family: 'Roboto Mono',monospace;
+  min-height: 400px;
+  background-image: url('https://caelum-online-public.s3.amazonaws.com/imersao-dev-3/bg.png');
+  background-color: #C390EB;
+  background-size: 80vh;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  height: 100vh;
+}
+
+.page-title {
+  color:#FC0DA2;
+  margin: 0 0 5px;
+}
+
+.page-subtitle {
+  color:#5112FF;
+  margin-top: 5px;
+}
+
+.page-logo {
+  width: 200px;
+}
+
+.alura-logo {
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+-JS:
+
+var nome= "Kassia Camila"
+var notaDoPrimeiroBimestre = 8
+var notaDoSegundoBimestre = 7
+var notaDoTerceiroBimestre = 6
+var notaDoQuartoBimestre = 7
+var notaFinal = (notaDoPrimeiroBimestre + notaDoSegundoBimestre + notaDoTerceiroBimestre +  notaDoQuartoBimestre) / 4
+var notaFixada = notaFinal.toFixed (1)
+console.log (" A Nota da " +  nome  + " é "  +   notaFixada )
+console.log (notaFixada)
+// revisão: variaveis: espaços na memoria do pc que utilizamos para colocar um valor, string: palavras, aspas. console.log imprime no console, 
+tofixed fixa quantos numeros apos a virgula. operações +-/*,concatenação de quando junta duas coisas, no console imprime as coisas, console.log
