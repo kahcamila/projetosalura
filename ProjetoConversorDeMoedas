@@ -1,0 +1,91 @@
+*-HTML:*
+
+div class="container">
+  <h1 class="page-title">
+    Conversor de moedas
+  </h1>
+  <p class="page-subtitle">
+    Descubra os valores em real R$
+  </p>
+  <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg" class="page-logo" alt=""><br><br>
+  <label for="moeda">Insira o valor</label><br>
+  <input type="number" id="valor" size="2" /><br>
+  <button type="submit" onclick="Converter()">Converter</button>
+  <h2 id="valorConvertido"></h2>
+</div>
+<a href="https://alura.com.br/" target="_blank">
+  <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+  
+  *-CSS:*
+  
+  body {
+  font-family: "Roboto Mono", monospace;
+  min-height: 400px;
+  background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-1-conversor-de-moedas.png");
+  background-color: #000000;
+  background-size: 100vh;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  height: 100vh;
+}
+
+.page-title {
+  color: #ffffff;
+  margin: 0 0 5px;
+}
+
+.page-subtitle {
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+.page-logo {
+  width: 200px;
+}
+
+.alura-logo {
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+input {
+  margin: 12px;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+label {
+  color: white;
+}
+
+button {
+  margin-top: 12px;
+  padding: 4px 8px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 30px;
+}
+
+*JS:*
+
+function Converter() {
+  var valorElemento = document.getElementById("valor"); //var que guarda o valor do input que vao colocar, o document.. pega as info do html e passo o id que quero, peguei o id do input do html p var valorElemento
+  var valor = valorElemento.value; // nova var que vai ter o valorElemento mas nao o componente inteiro, a linha toda do html e sim so o conteudo que ta la dentro, so o valor que eu colocar na caixinha do programa que insiro o numero p converter. P isso coloca um ponto p acessar esse conteudo e o value
+  var valorEmDolarNumerico = parseFloat(valor); // o comando parsefloat ele transforma o valor de texto/string em decimal/float. E criei uma nova var e dentro dos () coloco o valor que quero alterar de texto para numero.
+  var valorEmReal = valorEmDolarNumerico * 5;
+  console.log(valorEmReal); // ta sendo impresso no console a conversão
+  var elementoValorConvertido = document.getElementById("valorConvertido");
+  var valorConvertido = "O resultado em real é R$: " + valorEmReal;
+  elementoValorConvertido.innerHTML = valorConvertido; // inner= interno. vou colocar dentro do elemento do html e com isso aparece na tela a msg do resultado, e nao so no console, p o usuario conseguir ver
+}
